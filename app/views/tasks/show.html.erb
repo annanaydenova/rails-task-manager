@@ -1,0 +1,15 @@
+<p><%= @task.title %></p>
+<!-- <p><%= @task.completed %></p> -->
+<% if @task.completed %>
+        <i class="far fa-check-square"></i>
+        <p>This task is completed</p>
+      <% else %>
+        <i class="far fa-square"></i>
+        <p>This task is not completed yet</p>
+      <% end %>
+  <%= link_to "Delete #{@task.title}",
+            task_path(@task),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+<p><%= link_to "Back to tasks", tasks_path%></p>
+
